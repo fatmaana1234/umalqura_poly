@@ -13,6 +13,7 @@ import {
 export const CLINIC_INFO = {
   nameAr: 'مجمع أم القرى الطبي',
   nameEn: 'Um Alqura Polyclinic',
+  logo: '/logo.jpg',
   mottoAr: 'صحتك.. أولويتنا',
   mottoEn: 'Your Health, Our Priority',
   specialtyAr: 'العلاج الطبيعي والتأهيل الطبي فقط',

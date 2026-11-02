@@ -139,7 +139,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Clinic Mini Header in Sidebar */}
         <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-[#FAF8F1]">
           <div className="flex items-center gap-2.5">
-            <img src="/icon.svg" alt="شعار" className="w-8 h-8 rounded-lg border border-gray-200" />
+            <img
+              src="/logo.jpg"
+              alt="شعار مجمع أم القرى الطبي"
+              className="h-10 w-auto max-w-[80px] object-contain rounded-lg border border-gray-200 bg-white p-0.5"
+            />
             <div>
               <div className="text-xs font-black text-[#075563]">مجمع أم القرى الطبي</div>
               <div className="text-[10px] text-[#B59B62] font-semibold">بركاء - سلطنة عمان 2026</div>

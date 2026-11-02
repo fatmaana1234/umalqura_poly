@@ -85,7 +85,11 @@ export const DischargeReportModal: React.FC<DischargeReportModalProps> = ({
           {/* Clinic Official Letterhead */}
           <div className="border-b-2 border-[#075563] pb-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img src="/icon.svg" alt="شعار المجمع" className="w-16 h-16 rounded-xl border border-gray-200" />
+              <img
+                src="/logo.jpg"
+                alt="شعار مجمع أم القرى الطبي"
+                className="h-16 w-auto max-w-[180px] object-contain rounded-xl border border-gray-200 p-1 bg-white"
+              />
               <div>
                 <h1 className="font-black text-xl text-[#075563]">{CLINIC_INFO.nameAr}</h1>
                 <p className="text-xs font-bold text-[#B59B62]">{CLINIC_INFO.nameEn}</p>

@@ -32,9 +32,16 @@ export const ElderlyUIMode: React.FC<ElderlyUIModeProps> = ({ onBack }) => {
           العودة للواجهة الرئيسية
         </button>
 
-        <div className="text-right">
-          <div className="text-xs font-bold text-[#B59B62]">مجمع أم القرى الطبي - بركاء</div>
-          <h1 className="text-xl sm:text-2xl font-black text-[#075563]">واجهة كبار السن الميسرة</h1>
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo.jpg"
+            alt="شعار مجمع أم القرى الطبي"
+            className="h-12 w-auto max-w-[120px] object-contain rounded-xl border border-gray-200 bg-white p-0.5"
+          />
+          <div className="text-right">
+            <div className="text-xs font-bold text-[#B59B62]">مجمع أم القرى الطبي - بركاء</div>
+            <h1 className="text-xl sm:text-2xl font-black text-[#075563]">واجهة كبار السن الميسرة</h1>
+          </div>
         </div>
       </div>
 
