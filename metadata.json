@@ -1,0 +1,9 @@
+{
+  "name": "مجمع أم القرى الطبي - Um Alqura Polyclinic 2026",
+  "description": "النظام الإكلينيكي والإداري المتكامل للعلاج الطبيعي والتأهيل بمجمع أم القرى الطبي - بركاء، سلطنة عمان. يتضمن 23 موديولاً متطوراً والذكاء الاصطناعي وإدارة الجدولة خماسية الأبعاد وملفات SOAP والخرائط الجسدية.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

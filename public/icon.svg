@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075563" />
+      <stop offset="100%" stop-color="#04323b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0c587" />
+      <stop offset="50%" stop-color="#B59B62" />
+      <stop offset="100%" stop-color="#8a7342" />
+    </linearGradient>
+  </defs>
+  <!-- Background with rounded corners for app icon -->
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)" />
+  
+  <!-- Outer Gold decorative ring -->
+  <circle cx="256" cy="256" r="216" fill="none" stroke="url(#goldGrad)" stroke-width="6" opacity="0.4" stroke-dasharray="8 6" />
+  
+  <!-- Islamic Arch / Medical Clinic Structure Motif -->
+  <path d="M 176 340 L 176 210 C 176 160 210 120 256 120 C 302 120 336 160 336 210 L 336 340 Z" 
+        fill="none" stroke="url(#goldGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Inner Stethoscope Heart Motif -->
+  <path d="M 256 170 C 240 145 200 150 200 185 C 200 230 256 265 256 265 C 256 265 312 230 312 185 C 312 150 272 145 256 170 Z" 
+        fill="#2A9DA5" opacity="0.9" />
+
+  <!-- Spine / Physiotherapy vertebrae nodes -->
+  <circle cx="256" cy="275" r="7" fill="url(#goldGrad)" />
+  <circle cx="256" cy="298" r="8" fill="url(#goldGrad)" />
+  <circle cx="256" cy="323" r="9" fill="url(#goldGrad)" />
+  <circle cx="256" cy="350" r="10" fill="url(#goldGrad)" />
+
+  <!-- Base pulse wave -->
+  <path d="M 120 395 L 190 395 L 210 365 L 235 430 L 265 345 L 285 415 L 305 395 L 392 395" 
+        fill="none" stroke="#2A9DA5" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+        
+  <!-- Polyclinic Name in Arabic & English -->
+  <text x="256" y="468" font-family="'Cairo', sans-serif" font-size="28" font-weight="bold" fill="#FAF8F1" text-anchor="middle" letter-spacing="1">مجمع أم القرى الطبي</text>
+  <text x="256" y="492" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#B59B62" text-anchor="middle" letter-spacing="2">UM ALQURA CLINIC</text>
+</svg>

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  um-alqura-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: um_alqura_clinic_system_2026
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - VITE_CLINIC_NAME="مجمع أم القرى الطبي"
+      - VITE_CLINIC_LOCATION="سلطنة عمان - بركاء"
+      - VITE_CLINIC_PHONE="+96879470050"
+    networks:
+      - polyclinic-network
+
+  supabase-db:
+    image: supabase/postgres:15.1.0.117
+    container_name: polyclinic_postgres_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: polyclinic_db
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-UmAlquraSecure2026!}
+    volumes:
+      - polyclinic_data:/var/lib/postgresql/data
+      - ./supabase_schema.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - polyclinic-network
+
+networks:
+  polyclinic-network:
+    driver: bridge
+
+volumes:
+  polyclinic_data:
