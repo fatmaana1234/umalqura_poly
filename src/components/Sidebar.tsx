@@ -23,10 +23,28 @@ import {
   Flame,
   Images,
   Users,
-  ChevronLeft
+  ChevronLeft,
+  Factory,
+  Boxes,
+  TrendingUp,
+  Landmark,
+  Fingerprint,
+  Network,
+  Zap,
+  Building2,
+  Cpu
 } from 'lucide-react';
 
 export type ActiveNavTab =
+  | 'erp_dashboard'
+  | 'erp_warehouses'
+  | 'erp_manufacturing'
+  | 'erp_sales_purchases'
+  | 'erp_finance'
+  | 'erp_hr'
+  | 'erp_biometrics'
+  | 'erp_api_hub'
+  | 'erp_automation'
   | 'dashboard'
   | 'appointments'
   | 'soap_notes'
@@ -59,19 +77,35 @@ interface SidebarProps {
   onSelectTab: (tab: ActiveNavTab) => void;
   isMobileOpen?: boolean;
   onCloseMobile?: () => void;
+  onOpenVoiceAssistant?: () => void;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
   activeTab,
   onSelectTab,
   isMobileOpen = false,
-  onCloseMobile
+  onCloseMobile,
+  onOpenVoiceAssistant
 }) => {
   const navSections = [
     {
-      title: 'الرئيسية والإدارة',
+      title: 'الإدارة التنفيذية ومصنع التأهيل ERP',
       items: [
-        { id: 'dashboard', label: 'لوحة التحكم والمؤشرات', icon: LayoutDashboard },
+        { id: 'erp_dashboard', label: 'لوحة الإدارة التنفيذية الموحدة', icon: LayoutDashboard },
+        { id: 'erp_warehouses', label: 'المستودعات الثلاثة (خام/تشغيل/تام)', icon: Boxes },
+        { id: 'erp_manufacturing', label: 'أوامر التصنيع وهندسة BOM', icon: Factory },
+        { id: 'erp_sales_purchases', label: 'المبيعات والمشتريات (VAT 5%)', icon: TrendingUp },
+        { id: 'erp_finance', label: 'الحسابات ودفتر الأستاذ العام', icon: Landmark },
+        { id: 'erp_hr', label: 'الموارد البشرية والرواتب', icon: Users },
+        { id: 'erp_biometrics', label: 'بوابات البصمة ZKTeco', icon: Fingerprint },
+        { id: 'erp_api_hub', label: 'مركز واجهات البرمجة API Hub', icon: Network },
+        { id: 'erp_automation', label: 'محرك الأتمتة وسير العمليات', icon: Zap },
+      ]
+    },
+    {
+      title: 'مجمع أم القرى الطبي — بركاء',
+      items: [
+        { id: 'dashboard', label: 'لوحة مؤشرات المجمع الإكلينيكي', icon: Building2 },
         { id: 'patients_directory', label: 'سجل المراجعين والمرضى', icon: Users },
         { id: 'equipment_gallery', label: 'معرض أجهزة المجمع الحقيقية', icon: Images },
       ]
@@ -136,17 +170,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
           isMobileOpen ? 'translate-x-0' : 'translate-x-full md:translate-x-0'
         }`}
       >
-        {/* Clinic Mini Header in Sidebar */}
+        {/* Clinic & Factory Mini Header in Sidebar */}
         <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-[#FAF8F1]">
           <div className="flex items-center gap-2.5">
             <img
               src="/logo.jpg"
               alt="شعار مجمع أم القرى الطبي"
-              className="h-10 w-auto max-w-[80px] object-contain rounded-lg border border-gray-200 bg-white p-0.5"
+              className="h-10 w-auto max-w-[80px] object-contain rounded-lg border border-gray-200 bg-white p-0.5 shadow-2xs"
             />
             <div>
               <div className="text-xs font-black text-[#075563]">مجمع أم القرى الطبي</div>
-              <div className="text-[10px] text-[#B59B62] font-semibold">بركاء - سلطنة عمان 2026</div>
+              <div className="text-[10px] text-[#B59B62] font-semibold">المصنع والمجمع • بركاء 2026</div>
             </div>
           </div>
           {onCloseMobile && (
@@ -158,6 +192,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </button>
           )}
         </div>
+
+        {/* Quick Voice Assistant Trigger Button */}
+        {onOpenVoiceAssistant && (
+          <div className="p-2.5 bg-gradient-to-r from-[#075563] to-[#2A9DA5] text-white flex items-center justify-between px-3">
+            <div className="flex items-center gap-2 text-xs font-bold">
+              <Cpu className="w-4 h-4 text-amber-300" />
+              <span>المساعد الصوتي المباشر</span>
+            </div>
+            <button
+              onClick={onOpenVoiceAssistant}
+              className="px-2.5 py-1 bg-amber-400 hover:bg-amber-300 text-[#075563] rounded-lg text-[10px] font-bold transition shadow-xs"
+            >
+              تحدث الآن
+            </button>
+          </div>
+        )}
 
         {/* Navigation Links Scrollable List */}
         <div className="flex-1 overflow-y-auto p-3 space-y-4">
@@ -179,7 +229,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         : 'text-gray-700 hover:bg-[#FAF8F1] hover:text-[#075563]'
                     }`}
                   >
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-2.5 truncate">
                       <Icon className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-[#B59B62]' : 'text-gray-500'}`} />
                       <span className="truncate">{item.label}</span>
                     </div>
@@ -194,7 +244,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Sidebar Footer with Location & Quick Call */}
         <div className="p-3 bg-gray-50 border-t border-gray-100 text-[11px] text-gray-500 space-y-1 text-center">
           <div>بناية R&B، بركاء، سلطنة عمان</div>
-          <div className="font-mono text-[#075563] font-bold">+968 79470050</div>
+          <div className="font-mono text-[#075563] font-bold">+968 79470050 / +968 94545025</div>
         </div>
       </aside>
     </>
