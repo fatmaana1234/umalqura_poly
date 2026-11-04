@@ -349,6 +349,31 @@ git push -u origin main
           </button>
         </div>
 
+        {/* Direct Complete ZIP Download Banner */}
+        <div className="mx-4 sm:mx-6 mt-4 p-4 rounded-2xl bg-gradient-to-r from-[#075563] via-[#0b6576] to-[#2A9DA5] text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded-full bg-amber-400 text-[#075563] text-[10px] font-black">
+                حزمة المشروع الكاملة ZIP
+              </span>
+              <span className="text-xs text-amber-200 font-mono">حجم الملف: 4.6 ميغابايت (90 ملفاً)</span>
+            </div>
+            <h4 className="font-bold text-sm">تحميل كود النظام الكامل ومصنع التأهيل (All Files ZIP)</h4>
+            <p className="text-[11px] text-white/80">
+              يتضمن كامل الكود المصدري (TypeScript, React 19, Tailwind v4, PWA, Docker, SQL, Asset Images, Logos).
+            </p>
+          </div>
+
+          <a
+            href="./um_alqura_complete_system_2026.zip"
+            download="um_alqura_complete_system_2026.zip"
+            className="w-full sm:w-auto px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-[#075563] rounded-xl font-black text-xs transition flex items-center justify-center gap-2 shadow-sm text-center"
+          >
+            <Download className="w-4 h-4" />
+            تنزيل الملف المباشر (.ZIP)
+          </a>
+        </div>
+
         {/* Tab Buttons */}
         <div className="flex border-b border-gray-200 bg-[#FAF8F1] px-4 pt-3 gap-2 overflow-x-auto">
           <button

@@ -117,6 +117,18 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="hidden sm:inline">واجهة كبار السن</span>
           </button>
 
+          {/* Direct ZIP Download Link */}
+          <a
+            href="./um_alqura_complete_system_2026.zip"
+            download="um_alqura_complete_system_2026.zip"
+            className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-[#075563] text-xs font-black rounded-xl border border-amber-500/30 transition flex items-center gap-1.5 shadow-xs"
+            title="تحميل جميع ملفات المشروع ZIP"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">تحميل المشروع ZIP</span>
+            <span className="sm:hidden">ZIP</span>
+          </a>
+
           {/* Codebase & Database Export Modal Button */}
           <button
             onClick={onOpenExportCenter}
